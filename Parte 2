@@ -1,0 +1,38 @@
+Object oriented programming part two
+
+class Dog():
+    
+    species = 'mammal' #class attribute, goes before init
+    
+    def __init__(self,breed,name,spots): #aca creo el/los atributos
+        
+        self.breed = breed #aca defino el atributo
+        self.name = name
+        self.spots = spots
+        
+    def bark(self): # esto ya es un metodo
+        print('woof')
+        
+  my_dog.species # para llamar atributo no abro parentesis
+  
+  my_dog.bark() # para llamar metodo abro parentesis
+  
+  #new class
+
+class Circle():
+    pi = 3.14
+    
+    def __init__(self,radius=1):
+        self.radius = radius
+        self.area = radius*radius*Circle.pi
+        
+    def get_circ(self):
+        return self.radius*self.pi*2
+        
+ my_circle = Circle(30)
+ 
+ my_circle.get_circ()
+ 
+ my_circle.area
+ 
+ 
