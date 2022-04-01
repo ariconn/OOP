@@ -1,0 +1,82 @@
+# create a bank account con ciertos atributos
+
+# 2 atributos owner y balance
+# 2 metodos deposit y withdraw
+
+# condicion, if, withdraw no puede ser mayor a balance
+
+class Account:
+    pass
+    
+
+
+class Simple():
+    
+    def __init__(self,value):
+        self.value = value
+        
+    def add_to_value(self,amount):
+        self.value = self.value + amount
+        print ('we just added {} to your value'.format(amount))
+        
+
+myobj = Simple(300)
+
+myobj.value
+300
+
+myobj.add_to_value(500)
+we just added 500 to your value
+
+myobj.value
+800
+
+
+
+# ahora si el ejercicio
+
+class Account:
+    def __init__(self,owner,balance=0):
+        
+        self.owner = owner
+        self.balance = balance
+        
+    def deposit(self,dep_amt):
+        self.balance = self.balance + dep_amt
+        print(f"Added {dep_amt} to the balance")
+        
+    def withdrawl(self,wd_amt):
+        if self.balance >= wd_amt:
+            self.balance = self.balance - wd_amt
+            print("Withdrawl accepted!")
+            
+        else:
+            print ("Sorry non enough funds")
+        
+    def __str__(self):
+        return f"Owner: {self.owner} with a balance of: {self.balance}"
+        
+        
+        
+a = Account("sam",600)
+
+a.balance
+600
+
+print(a)
+Owner: sam with a balance of: 600
+
+a.deposit(500)
+Added 500 to the balance
+
+print(a)
+Owner: sam with a balance of: 1100
+
+a.withdrawl(1100)
+Withdrawl accepted!
+
+a.withdrawl(100)
+Sorry non enough funds
+
+a.balance
+0
