@@ -1,0 +1,63 @@
+Object oriented programming Inheritance and Polymorphism
+
+class Animal():
+    
+    def __init__(self):
+        print('animal created')
+        
+    def who_am_i(self):
+        print("i am an animal")
+        
+    def eat(self):
+        print('i am eating')
+        
+  ahora puedo usar estas attributes para otra class
+  
+  # classes a partir de classes ya creadas
+
+class Dog(Animal): #enherence Animal ;)
+    
+    def __init__(self):
+        Animal.__init__(self)
+        print("dog created")
+        
+    def who_am_i(self): #overrited previous attributes
+        print("i am a dog")
+    
+    def eat(self):
+        print('i am a dog!')
+        
+  Polymorphism
+  
+  class Dog():
+    
+    def __init__(self,name):
+        self.name = name
+        
+    def speak(self):
+        return self.name + "says woof"
+        
+ class Cat():
+    
+    def __init__(self,name):
+        self.name = name
+        
+    def speak(self):
+        return self.name + "says meow"
+        
+for pet in [niko,felix]:
+    print(type(pet))
+    print(pet.speak())
+    
+<class '__main__.Dog'>
+nikosays woof
+<class '__main__.Cat'>
+felixsays meow
+
+def pet_speak(pet):
+    print(pet.speak())
+    
+pet_speak(niko)
+
+pet_speak(felix)
+
