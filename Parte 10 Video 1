@@ -1,0 +1,61 @@
+Error and error handling
+
+
+try: block of code tyo be attempted, may or not be an error
+except: block of code to be execute in case is an errror un try
+finally: block of code executed regardless of an error
+
+try:
+    #try code may have rror
+    result = 10+10
+except:
+    print("hey looks like error")
+else:
+    print("add went well")
+    print(result)
+    
+add went well
+20
+
+
+
+
+try:
+    f = open('testfile','r') #w is por write only
+                            #si cambio a r entonces da error OS
+    
+    f.write("write a test line")
+except OSError:
+    print("hey error OS")
+finally:
+    print("i alwats run")
+    
+hey error OS
+i alwats run
+
+
+def ask_for_int(): #arego loop para q siga preguntando
+    
+    while True:
+        try:
+            result=int(input("please provide number "))
+        except:
+            print("woops thats not a number")
+            continue
+        else:
+            print("yes thank you")
+            break
+        finally:
+            print("i ask again")
+            
+ask_for_int()
+please provide number a
+woops thats not a number
+i ask again
+please provide number 1
+yes thank you
+i ask again
+
+
+
+    
