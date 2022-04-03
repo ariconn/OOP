@@ -1,0 +1,32 @@
+Unit testing
+
+as code gets larger you may add tests in place
+
+testing tool
+pylint
+issues or invalid code
+
+
+unittest
+testo program and checks outputs
+
+example: pylint for errors and styling known as PEP8
+
+then test code with built-in unittest library
+
+command line: install Pip install pylint
+back to text edit Jupiter
+
+#a very simple script
+
+def myfunc():
+    first = 1
+    second = 2
+    print(first)
+    print(second)
+
+myfunc()
+
+
+al cporrer en command line te dice el rating del codigo q estas probando
+para q sea 10/10 deberias endentar mediante espacios y utilizar idioma tecnico para aumentar tu score
