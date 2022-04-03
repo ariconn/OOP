@@ -1,0 +1,94 @@
+Homework de error and exceptions
+
+try:
+    for i in ['a','b','c']:
+        print(i**2)
+except TypeError:
+    print("general error")
+    
+general error
+
+
+x = 5
+y = 0
+z = x/y
+
+---------------------------------------------------------------------------
+ZeroDivisionError                         Traceback (most recent call last)
+~\AppData\Local\Temp/ipykernel_15056/1510326360.py in <module>
+      1 x = 5
+      2 y = 0
+----> 3 z = x/y
+
+ZeroDivisionError: division by zero
+
+
+try:
+    x = 5
+    y = 0
+    z = x/y
+except:
+    print("error")
+finally:
+    print("all done")
+    
+error
+all done
+
+
+def ask():
+    pass
+    
+def ask():
+    while True:
+        try:
+            n = int(input("enter a number"))
+        except:
+            print("please try again \n")
+            continue
+        else:
+            break
+            
+    print("your number squared is: ")
+    print(n**2)
+    
+ask()
+enter a numbera
+please try again 
+
+enter a numberb
+please try again 
+
+enter a number4
+your number squared is: 
+16
+
+
+def ask():
+    
+    #waiting for correct response
+    waiting = True
+    
+    while waiting:
+        try:
+            n = int(input("enter a number"))
+        except:
+            print("please try again \n")
+            continue
+        else:
+            waiting = False
+            
+    print("your number squared is: ")
+    print(n**2)
+    
+    ask()
+    enter a numbera
+please try again 
+
+enter a numbera
+please try again 
+
+enter a number5
+your number squared is: 
+25
+
