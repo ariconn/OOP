@@ -1,0 +1,32 @@
+#python one.py (esto es correr directo de python)
+#si tipeo python xx.py en command line se corre directo
+#si corro esto directo quiere decir q name = main como dice abajo
+
+
+
+def func():
+	print ("Func() in one.py")
+
+print ("top level in one.py")
+
+
+#built in variable siempre al final esta linea
+if __name__ == "__main__":
+	print('one.py is beeing run diorectly')
+else:
+	print('one.py has been imported')
+#ejemplo
+
+def function1():
+	pass
+
+def function2():
+	pass
+
+if __name__ == '__main__':
+	#run the script
+	function1()
+	function2()
+
+#this is the basics of modules and packages if name = main
+
