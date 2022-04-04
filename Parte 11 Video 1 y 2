@@ -1,0 +1,87 @@
+Second Milestone project
+video 1
+Cared game call WAR
+
+como va
+deck de cartas y se divide en 2 players
+
+carta contra carta
+la mas alta se lleva las cartas
+el q se queda sin cartas pierde
+
+cartas iguales entonces WAR, set aside 3 cartas y se vuelve a tirar
+el q gana eso se vuelve a quedar las cartas
+
+vamos a crear
+card class
+deck cla
+player class
+game logic
+
+vamos a simular juego entre 2 comp
+
+video 2
+Card class
+
+notebook
+-------------------------------------
+#card
+#suit, rank, value
+import random
+suits = ('hearts','diamonds','spades','clubs')
+
+ranks = ('two','three','four','five','six','seven','eight','nine','ten','jack','queen','king','ace')
+
+values = {'two':2,'three':3,'four':4,'five':5,'six':6,'seven':7,'eight':8,'nine':9,'ten':10,'jack':11,'queen':12,'king':13,'ace':14}
+--------------------------
+class Card:
+    
+    def __init__(self,suit,rank):
+        self.suit = suit
+        self.rank = rank
+        self.value = values[rank]
+        
+    def __str__(self):
+        return self.rank + " of " + self.suit
+        
+ --------------
+ 
+ three_of_clubs = Card("clubs",'three')
+ 
+ three_of_clubs.value
+ 3
+ 
+ three_of_clubs.suit
+ 'clubs'
+
+
+three_of_clubs.rank
+'three'
+
+
+two_of_hearts = Card("hearts","two")
+
+two_of_hearts
+<__main__.Card at 0x2960df08850>
+
+print(two_of_hearts)
+two of hearts
+
+
+two_of_hearts.suit
+'hearts'
+
+
+two_of_hearts.rank
+'two'
+
+values[two_of_hearts.rank]
+2
+
+two_of_hearts.value < three_of_clubs.value
+True
+
+two_of_hearts.value == three_of_clubs.value
+False
+
+next video on Deck Class
