@@ -1,0 +1,107 @@
+Deck Class
+
+class Deck:
+    
+    def __init__(self):
+        
+        self.all_cards = [] #es una lista por los corchetes
+        
+        for suit in suits:
+            for rank in ranks:
+                #create the card obj
+                created_card = Card(suit,rank)
+                
+                self.all_cards.append(created_card)
+    
+    def shuffle(self):
+        random.shuffle(self.all_cards) #mezclo las cartas
+        
+    def deal_one(self):
+        return self.all_cards.pop() #con pop remuevo la carta
+        
+ ----------------------------------
+ 
+ 
+ new_deck = Deck()
+ 
+ new_deck.all_cards[0]
+ <__main__.Card at 0x2960e01ecd0>
+
+
+first_card = new_deck.all_cards[0]
+
+print(first_card)
+two of hearts
+
+
+bottom_card = new_deck.all_cards[-1]
+
+print(bottom_card)
+ace of clubs
+
+
+for card_object in new_deck.all_cards:
+    print(card_object)
+two of hearts
+three of hearts
+four of hearts
+five of hearts
+six of hearts
+seven of hearts
+eight of hearts
+nine of hearts
+ten of hearts
+jack of hearts
+queen of hearts
+king of hearts
+ace of hearts
+two of diamonds
+three of diamonds
+four of diamonds
+five of diamonds
+six of diamonds
+seven of diamonds
+eight of diamonds
+nine of diamonds
+ten of diamonds
+jack of diamonds
+queen of diamonds
+king of diamonds
+ace of diamonds
+two of spades
+three of spades
+four of spades
+five of spades
+six of spades
+seven of spades
+eight of spades
+nine of spades
+ten of spades
+jack of spades
+queen of spades
+king of spades
+ace of spades
+two of clubs
+three of clubs
+four of clubs
+five of clubs
+six of clubs
+seven of clubs
+eight of clubs
+nine of clubs
+ten of clubs
+jack of clubs
+queen of clubs
+king of clubs
+ace of clubs
+
+new_deck.shuffle()
+
+mycard = new_deck.deal_one()
+
+print(mycard)
+four of diamonds
+
+
+len(new_deck.all_cards)
+51
