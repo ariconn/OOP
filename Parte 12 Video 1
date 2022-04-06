@@ -1,0 +1,191 @@
+Decorators
+
+def func():
+    return 1
+    
+func()
+1
+
+def hello():
+    return ("hello")
+    
+hello()
+'hello'
+
+
+greet = hello
+greet()
+hello
+
+
+------------------------------------
+
+
+def hello(name='Jose'):
+    print ('the hello() function has been executed')
+    
+    def greet():
+        return '\t this is the greet() func inside hello' 
+    
+    def welcome():
+        return '\t this is welcome() inside hello'
+    
+    print (greet())
+    print (welcome())
+    print ('this is the end of the hello() func')
+    
+hello()
+   the hello() function has been executed
+	 this is the greet() func inside hello
+	 this is welcome() inside hello
+this is the end of the hello() func
+    
+--------------------------------------------------------
+
+
+def hello(name='Jose'):
+    print ('the hello() function has been executed')
+    
+    def greet():
+        return '\t this is the greet() func inside hello' 
+    
+    def welcome():
+        return '\t this is welcome() inside hello'
+    
+    print ("i am going to return a func")
+    
+    if name == 'Jose':
+        return greet
+
+    else:
+        return welcome
+
+
+
+
+my_new_func = hello('Jose')
+the hello() function has been executed
+i am going to return a func
+
+my_new_func
+<function __main__.hello.<locals>.greet()>
+
+my_new_func()
+'\t this is the greet() func inside hello'
+
+print(my_new_func())
+	 this is the greet() func inside hello
+
+----------------------------------------
+
+
+def cool():
+    
+    def super_cool():
+        return 'i am very cool'
+    
+    return super_cool
+    
+  some_func = cool()
+  
+  some_func
+  <function __main__.cool.<locals>.super_cool()>
+
+some_func()
+'i am very cool'
+
+
+-----------------------------------
+    
+
+def hello():
+    return 'hi jose'
+    
+def  other(some_def_func):
+    print ('other code runs here')
+    print (some_def_func()) #los parentesis son para q se ejecute la funcion
+    
+    
+hello()
+'hi jose'
+
+other(hello)
+other code runs here
+hi jose    
+    
+-----------------------------------------------    
+    
+    
+#decorator
+
+def new_deco(original_func):
+    def wrap_func():
+        print('some extra code before the original')
+        
+        original_func()
+        
+        print ('some extra code, after the original func')
+        
+    return wrap_func
+    
+    
+    
+    
+ def func_needs_deco():
+    print("i want to be decorated")
+    
+    
+    
+    
+    
+
+func_needs_deco
+<function __main__.func_needs_deco()>
+
+
+func_needs_deco()
+i want to be decorated
+
+
+
+
+decorated_func = new_deco(func_needs_deco)
+
+decorated_func()
+some extra code before the original
+i want to be decorated
+some extra code, after the original func
+
+
+
+
+@new_deco
+def func_needs_deco():
+    print("i want to be decorated")
+
+
+    
+func_needs_deco()
+some extra code before the original
+i want to be decorated
+some extra code, after the original func
+
+#ver homework para usar Flask y Django para websites con decorators
+#tambien tenemos definicion de Framework y lo que es una API
+
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
