@@ -1,0 +1,196 @@
+Milestone prpoject 2
+Videos 8 al 2
+
+#suits = ('hearts','diamonds','spades','clubs')
+
+#ranks = ('two','three','four','five','six','seven','eight','nine','ten','jack','queen','king','ace')
+
+#values = {'two':2,'three':3,'four':4,'five':5,'six':6,'seven':7,'eight':8,'nine':9,'ten':10,'jack':10,'queen':10,'king':10,'ace':11}
+
+-----------------------
+
+import random
+
+suits = ('hearts','diamonds','spades','clubs')
+ranks = ('two','three','four','five','six','seven','eight','nine','ten','jack','queen','king','ace')
+values = {'two':2,'three':3,'four':4,'five':5,'six':6,'seven':7,'eight':8,'nine':9,'ten':10,'jack':10,'queen':10,'king':10,'ace':11}
+
+playing = True
+
+--------------------
+
+class Card:
+    
+    def __init__(self,suit,rank):
+        self.suit = suit
+        self.rank = rank
+    def __str__(self):
+        return self.rank + " of " + self.suit
+        
+-------------------------
+
+#step 3 create a deck class
+
+class Deck:
+    
+    def __init__(self):
+        self.deck = []
+        for suit in suits:
+            for rank in ranks:
+                self.deck.append(Card(suit,rank))
+                    
+                
+    def __str__(self):
+        deck_comp = ''
+        for card in self.deck:
+            deck_comp += '\n' + card.__str__()
+        return "the deck has: " + deck_comp
+        
+    
+    def shuffle(self):
+        random.shuffle(self.deck)
+        
+    def deal(self):
+        single_card = self.deck.pop()
+        return single_card
+        
+----------------------------------
+
+test_deck = Deck ()
+test_deck.shuffle()
+print(test_deck)
+
+the deck has: 
+five of spades
+seven of diamonds
+ten of diamonds
+ten of clubs
+four of clubs
+three of diamonds
+three of hearts
+jack of spades
+five of diamonds
+three of spades
+six of diamonds
+six of hearts
+five of clubs
+eight of hearts
+jack of clubs
+nine of diamonds
+five of hearts
+two of diamonds
+ace of spades
+king of diamonds
+four of hearts
+ten of hearts
+king of clubs
+nine of clubs
+ten of spades
+four of spades
+eight of clubs
+nine of spades
+two of spades
+eight of diamonds
+jack of hearts
+two of hearts
+seven of spades
+eight of spades
+six of spades
+nine of hearts
+seven of hearts
+two of clubs
+four of diamonds
+six of clubs
+jack of diamonds
+queen of clubs
+three of clubs
+ace of hearts
+seven of clubs
+queen of hearts
+king of hearts
+king of spades
+ace of diamonds
+queen of diamonds
+queen of spades
+ace of clubs
+
+--------------------------------------------------
+
+#video 8 de juego BLackjack
+#create a hand class
+
+class Hand:
+    def __init__(self):
+        self.cards = [] #stars w an empy list
+        self.value = 0 #start w zero value
+        self.aces = 0 #add attribute to keep track of aces
+        
+    def add_card(self,card):
+        #card passed in
+        #from Deck.deal() --> single Card(suit,rank)
+        self.cards.append(card)
+        self.value += values[card.rank]
+        
+        #track aces
+        if card.rank == 'ace':
+            sel.aces += 1
+    
+    def adjust_for_ace(self):
+        
+        
+        #if total value > 21 and i still hace an ace
+        #than change my ace to be a 1 instead of a 11
+        while self.value > 21 and self.aces:
+            self.value -= 10
+            self.aces -= 1
+            
+----------------------------------------------
+
+zero = 0 #es tratado como falso
+one = 1 #es true
+two = 2 #es true
+
+if 0:
+    print('True')
+    
+-----------------------
+
+test_deck = Deck()
+test_deck.shuffle()
+
+#player
+test_player = Hand()
+#deal 1 card from de deck CARD(suit,rank)
+pulled_card = test_deck.deal()
+print(pulled_card)
+test_player.add_card(pulled_card)
+print(test_player.value)
+
+two of diamonds
+2
+
+#ERROR PARA CORREGIR EN 2DA VUELLTA
+
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+~\AppData\Local\Temp/ipykernel_5696/4116883882.py in <module>
+----> 1 test_deck = Deck()
+      2 test_deck.shuffle()
+      3 test_player = Hand()
+      4 test_player.add_card(test_deck.deal())
+      5 test_player.add_card(test_deck.deal())
+
+~\AppData\Local\Temp/ipykernel_5696/3702825503.py in __init__(self)
+      3     def __init__(self):
+      4         self.deck = []
+----> 5         for suit in suits:
+      6             for rank in ranks:
+      7                 self.deck.append(Card(suit,rank))
+
+NameError: name 'suits' is not defined
+
+
+
+
+
+
